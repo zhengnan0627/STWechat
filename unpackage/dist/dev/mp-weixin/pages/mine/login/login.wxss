@@ -1,0 +1,40 @@
+
+page{
+	background-color: #FFFFFF !important;
+}
+.container {
+	width: 100vw;
+	/* height: 100vh; */
+	overflow: hidden;
+	background-color: #FFFFFF;
+}
+.logo-box{
+	margin-top: 20rpx;
+	width: 100vw;
+	height: 300rpx;
+	line-height: 300rpx;
+	text-align: center;
+}
+.logo-box image {
+	width: 300rpx;
+	height: 300rpx;
+}
+.u-form{
+	box-sizing: border-box;
+	padding-left: 40rpx;
+	/* width: 80vw; */
+	margin: 20rpx auto;
+	background-color: #FFFFFF;
+}
+.commit{
+	width: 50vw;
+	margin: 0 auto;
+	margin-top: 80rpx;
+	height: 80rpx;
+	line-height: 80rpx;
+	text-align: center;
+	background-color: #1296DB;
+	color: #FFFFFF;
+	border-radius: 10px;
+}
+

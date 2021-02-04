@@ -1,0 +1,195 @@
+{
+	"easycom": { //配置uview
+			"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue"
+	},
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "首页"
+			
+			}
+		}
+	    ,{
+            "path" : "pages/index/xiadan",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "下账",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/index/notice/notice",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "企业公告",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/index/notice/noticesubpages",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "公告内容",
+                "enablePullDownRefresh": false
+				
+            }
+            
+        }
+        ,{
+            "path" : "pages/index/xiazhang/xiazhang",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "下账单",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/mine/mine",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "个人中心",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/mine/tongxunlu/tongxunlu",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "通讯录",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/mine/kefu/kefu",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "客服列表",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/shangpin/shangpin",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "商品展示",
+                "enablePullDownRefresh": false,
+				"disableScroll":true
+            }
+            
+        },{
+            "path" : "pages/diaohuo/diaohuo",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "调货申请",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/shangpin/search/search",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "商品搜索",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/index/pandian/pandian",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "盘点",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/index/kucun/kucun",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "库存查询",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/mine/denglu/denglu",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "登录",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/diaohuo/shenqingchaxun/shenqingchaxun",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "调货申请查询",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/diaohuo/detail/detail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "调货查询详情",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/mine/login/login",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "登录",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "helle-world",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8",
+		"enablePullDownRefresh":false
+	},
+	"tabBar": {
+	    "color": "#7A7E83",
+	    "selectedColor": "#3cc51f",
+	    "borderStyle": "black",
+	    "backgroundColor": "#ffffff",
+	    "list": [
+			{
+			    "pagePath": "pages/index/index",
+			    "iconPath": "static/logo.png",
+			    "selectedIconPath": "static/logo.png",
+			    "text": "主页"
+			},{
+	        "pagePath": "pages/shangpin/shangpin",
+	        "iconPath": "static/logo.png",
+	        "selectedIconPath": "static/logo.png",
+	        "text": "商品展示"
+	    },
+		{
+			    "pagePath": "pages/diaohuo/diaohuo",
+			    "iconPath": "static/logo.png",
+			    "selectedIconPath": "static/logo.png",
+			    "text": "调货申请"
+			},{
+		    "pagePath": "pages/mine/mine",
+		    "iconPath": "static/logo.png",
+		    "selectedIconPath": "static/logo.png",
+		    "text": "我的"
+		}]
+	}
+}

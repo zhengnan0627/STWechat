@@ -1,0 +1,26 @@
+
+page{
+	background-color: #EEEEEE !important;
+}
+.container {
+	width: 100vw;
+	overflow: hidden;
+	background-color: #EEEEEE;
+}
+.xonglu-box{
+	width: 100vw;
+	padding: 20rpx 20rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	        justify-content: space-between;
+	font-size: 28rpx;
+	background-color: #FFFFFF;
+	border-bottom: 1px solid #EEEEEE;
+}
+.xonglu-box:first-of-type{
+	margin-top: 10rpx;
+}
+

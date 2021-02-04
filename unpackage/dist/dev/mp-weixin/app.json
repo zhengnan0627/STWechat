@@ -1,0 +1,63 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/index/xiadan",
+    "pages/index/notice/notice",
+    "pages/index/notice/noticesubpages",
+    "pages/index/xiazhang/xiazhang",
+    "pages/mine/mine",
+    "pages/mine/tongxunlu/tongxunlu",
+    "pages/mine/kefu/kefu",
+    "pages/shangpin/shangpin",
+    "pages/diaohuo/diaohuo",
+    "pages/shangpin/search/search",
+    "pages/index/pandian/pandian",
+    "pages/index/kucun/kucun",
+    "pages/mine/denglu/denglu",
+    "pages/diaohuo/shenqingchaxun/shenqingchaxun",
+    "pages/diaohuo/detail/detail",
+    "pages/mine/login/login"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "helle-world",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/logo.png",
+        "selectedIconPath": "static/logo.png",
+        "text": "主页"
+      },
+      {
+        "pagePath": "pages/shangpin/shangpin",
+        "iconPath": "static/logo.png",
+        "selectedIconPath": "static/logo.png",
+        "text": "商品展示"
+      },
+      {
+        "pagePath": "pages/diaohuo/diaohuo",
+        "iconPath": "static/logo.png",
+        "selectedIconPath": "static/logo.png",
+        "text": "调货申请"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "iconPath": "static/logo.png",
+        "selectedIconPath": "static/logo.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "usingComponents": {},
+  "sitemapLocation": "sitemap76.json"
+}

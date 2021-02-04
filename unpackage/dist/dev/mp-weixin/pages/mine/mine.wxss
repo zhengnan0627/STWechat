@@ -1,0 +1,130 @@
+
+page{
+	background-color: #EEEEEE !important;
+}
+.container {
+	width: 100vw;
+	/* height:calc(100vh - 100rpx); */
+	/* padding-bottom: 100rpx; */
+	overflow: hidden;
+	background-color: #EEEEEE;
+}
+.header {
+	width: 100vw;
+	height: 300rpx;
+	line-height: 300rpx;
+	background-color: #55aaff;
+	/* border-radius:0 0 30% 30%; */
+	/* position: relative; */
+	margin-bottom: 20rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	-webkit-justify-content: space-around;
+	        justify-content: space-around;
+}
+.header-contont {
+	/* position: absolute;
+	top: 150rpx;
+	left: 3vw; */
+	width: 94vw;
+	padding: 10px 0;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	border-radius: 10px;
+	background-color: #ffffff;
+	color: #000000;
+}
+.header-icon {
+	width: 22vw;
+	height: 22vw;
+	margin-left: 40rpx;
+	border-radius: 20px;
+	overflow: hidden;
+	text-align: center;
+}
+.header-icon image {
+	width: 22vw;
+	height: 22vw;
+	/* position: relative;
+	top: -2.5vw;
+	left: -2vw; */
+	overflow: hidden;
+	border-radius: 50%;
+}
+.header-mine{
+	width: 50vw;
+	margin-left: 40rpx;
+	font-size: ;
+	color: #000000;
+}
+.mine-name {
+	width: 60vw;
+	height: 50rpx;
+	font-size: 28rpx;
+	line-height: 50rpx;
+}
+.mine-qiehuan {
+	margin-right: 3vw;
+	font-size: 28rpx;
+	width: 20vw;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	padding: 2px 5px;
+	border-radius: 10px;
+	/* border: 1px solid #00DC00 ; */
+	color: #00DC00;
+}
+.commit{
+	width: 50vw;
+	margin: 0 auto;
+	margin-top: 80rpx;
+	height: 80rpx;
+	line-height: 80rpx;
+	text-align: center;
+	background-color: #1296DB;
+	color: #FFFFFF;
+	border-radius: 10px;
+}
+.content {
+	width: 94vw;
+	margin: 0 3vw;
+	margin-top: 30rpx;
+	background-color: #FFFFFF;
+	border-radius: 10px;
+}
+.content .content-item {
+	width: 100%;
+	height: 90rpx;
+	line-height:90rpx;
+	vertical-align: middle;
+	font-size: 36rpx;
+	color: #000000;
+	border-radius: 10px;
+}
+.icon-font {
+	margin-left: 10rpx;
+	position: relative;
+	top: 22rpx;
+	width: 60rpx;
+	height: 55rpx;
+	line-height: 55rpx;
+}
+.icon-font image {
+	width: 100%;
+	height: 100%;
+}
+.item-title {
+	margin-left: 10rpx;
+	width: 100%;
+	border-bottom: 1px solid #EEEEEE;
+}
+
