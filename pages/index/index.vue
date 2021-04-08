@@ -12,15 +12,15 @@
 				</block>
 			</swiper>
 		</view> -->
-		<u-swiper :list="swiperlist" :title="true"></u-swiper>
-		<u-notice-bar :list="list" @click="noticetext" @close="listclick"></u-notice-bar>
+		<u-swiper :list="swiperlist" indicator-pos="bottomCenter"></u-swiper>
+		<u-notice-bar :list="noticList" @click="noticetext" @close="listclick"></u-notice-bar>
 		<view class="module-title">
 			功能模块
 		</view>
 		<u-grid :col="3">
 			<u-grid-item v-for="(item,index) in list" :key="index" @click="griditemclick" :index="item">
 				<!-- <u-icon name="photo" :size="46"></u-icon> -->
-				<image src="../../static/logo.png" mode="scaleToFill" class="grid-image"></image>
+				<image :src="item.image" mode="scaleToFill" class="grid-image"></image>
 				<view class="grid-text">{{item.name}}</view>
 			</u-grid-item>
 		</u-grid>
@@ -50,12 +50,12 @@
 						'title':'洛阳亲友如相问'
 					},
 				],
-				list: [
+				noticList: [
 					{
 						text: '寒雨连江夜入吴寒雨连江夜入吴寒雨连江夜入吴寒雨连江夜入吴',
 						id: 0,
 						name:'下账单',
-						url:'xiazhang/xiazhang'
+						url:'xiazhang/xiazhang',
 					},
 					{
 						text: '平明送客楚山孤',
@@ -68,13 +68,87 @@
 						id: 2,
 						name:'库存查询',
 						url:'kucun/kucun'
+					},
+				],
+				list: [
+					{
+						id: 0,
+						name:'下账单',
+						url:'xiazhang/xiazhang',
+						image:'../../static/xiazhangdan.png'
+					},
+					{
+						id: 1,
+						name:'盘点',
+						url:'pandian/pandian',
+						image:'../../static/pandian.png'
+					},
+					{
+						id: 2,
+						name:'库存查询',
+						url:'kucun/kucun',
+						image:'../../static/kucunchaxun.png'
+					},
+					{
+						id: 0,
+						name:'下账单查询',
+						url:'xiazhangchaxun/xiazhangchaxun',
+						image:'../../static/xiazhangdanchaxun.png'
+					},
+					{
+						id: 1,
+						name:'盘点查询',
+						url:'pandian/pandianlist',
+						image:'../../static/pandainchaxun.png'
+					},
+					{
+						id: 2,
+						name:'调货查询',
+						url:'diaohuochaxun/shenqingchaxun/shenqingchaxun',
+						image:'../../static/diaohuochaxun.png'
 					}
 				],
 				
 			};
 		},
 		onLoad() {
-
+			// this.$request({
+			// 	data:{
+			// 		type:'网络测试'
+			// 	}
+			// }).then(res => {
+			// 	if(res.code != 0) return this.$u.toast(res.data.msg_info)
+			// 	const resdata = res.data
+			// 	console.log(res);
+			// })
+			// this.$request({
+			// 	data:{
+			// 		type:'公司名称'
+			// 	}
+			// }).then(res => {
+			// 	if(res.code != 0) return this.$u.toast(res.data.msg_info)
+			// 	console.log(res);
+			// 	uni.setStorageSync('companyName', res.data[0].company_name);
+			// 	// uni.setNavigationBarTitle({
+			// 	//     title: res.data[0].company_name
+			// 	// });
+			// })
+			// uni.showModal({
+			//     title: '登录提示',
+			//     content: '当前未登录,请前往登录',
+			//     success: function (res) {
+			//         if (res.confirm) {
+			// 			// uni.redirectTo({
+			// 			// 	url:'/pages/mine/login/login'
+			// 			// })
+			// 			console.log('用户点击确定');
+			//         } else if (res.cancel) {
+			//             console.log('用户点击取消');
+			//         }
+			//     } 
+			// });
+			//进行登录状态检测
+			// this.$logo()
 		},
 		methods: {
 			noticetext(index) {
@@ -91,8 +165,7 @@
 				uni.navigateTo({
 					url:e.url
 				})
-			}
-			
+			} 
 		},
 	}
 </script>
@@ -132,9 +205,9 @@
 		border-top: 5px solid #D5D5D5;
 	}
 	.grid-image{
-		width: 180rpx !important;
-		height: 180rpx !important;
-		padding: 20rpx 10rpx;
+		width: 160rpx !important;
+		height: 160rpx !important;
+		padding: 10rpx 10rpx;
 	} 
 	.grid-text {
 		font-size: 28rpx;

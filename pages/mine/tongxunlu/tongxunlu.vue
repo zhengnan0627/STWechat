@@ -1,7 +1,7 @@
 <template>
 	<view class="container">
 		<uni-search-bar placeholder="客户名/客户地址/联系人/联系人电话" @confirm="search" @cancel="cancle" style="border-bottom: 1px solid #EEEEEE;"/>
-		<view class="xonglu-box" v-for="item in 10">
+		<view class="xonglu-box" v-for="item in 10" :key="item">
 			<view class="name">
 				张三
 			</view>

@@ -107,6 +107,7 @@
 			},
 			// 选择商品类型回调
 			selectConfirm1(e) {
+				console.log(e);
 				this.huoweiType = '';
 				e.map((val, index) => {
 					this.huoweiType += this.huoweiType == '' ? val.label : '-' + val.label;

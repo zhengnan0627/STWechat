@@ -2,10 +2,10 @@
 	<view class="container">
 		<view class="fixed" style="position: fixed; width: 100vw; z-index: 9;">
 			<view class="" style="display: flex; width: 100vw;border-bottom: 1px solid #EEEEEE;">
-				<view class="" style="width: 100%;" @click.self="searchclick">
-					<uni-search-bar placeholder="请输入手术类型进行搜索" :disabled="true" @confirm="search" @cancel="cancle"/>
+				<view class="" style="width: 100%;">
+					<uni-search-bar placeholder="请输入手术类型进行搜索"  @confirm="search" @cancel="cancle"/>
 				</view>
-				<view class="icon" @click="topiconclick" style="width: 80rpx;height: 104rpx;background-color: #FFFFFF;display: flex;align-items: center;">
+				<view class="icon" @click="topiconclick" style="width: 80rpx;background-color: #FFFFFF;display: flex;align-items: center;">
 					<uni-icons type="bars" size="26"></uni-icons>
 				</view>	
 			</view>

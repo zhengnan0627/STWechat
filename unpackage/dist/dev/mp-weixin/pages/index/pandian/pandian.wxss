@@ -69,4 +69,24 @@ page{
 	text-align: center;
 	border-radius: 6rpx;
 }
+.commit-box{
+	position: fixed;
+	bottom: 40rpx;
+	width: 100vw;
+	height: 80rpx;
+	line-height: 80rpx;
+	text-align: center;
+	z-index: 999;
+}
+.commit{
+	margin: 0rpx auto;
+	width: 30vw;
+	height: 80rpx;
+	line-height: 80rpx;
+	text-align: center;
+	background-color: #1296DB;
+	color: #FFFFFF;
+	border-radius: 10px;
+	z-index: 999;
+}
 

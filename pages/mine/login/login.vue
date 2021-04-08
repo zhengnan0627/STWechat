@@ -4,10 +4,10 @@
 			<image src="../../../static/logo.png" mode="aspectFit"></image>
 		</view>
 		<u-form class="u-form" >
-			<u-form-item :label-position="labelPosition" label="账号" prop="name" left-icon="account-fill" :leftIconStyle="{color: '#888', fontSize: '32rpx'}"  label-width="140" >
-				<u-input :border="border" placeholder="请输入账号" v-model="name" type="text"></u-input>
+			<u-form-item :label-position="labelPosition" label="账号" prop="user" left-icon="account-fill" :leftIconStyle="{color: '#888', fontSize: '32rpx'}"  label-width="140" >
+				<u-input :border="border" placeholder="请输入账号" v-model="user" type="text"></u-input>
 			</u-form-item>
-			<u-form-item :label-position="labelPosition" label="密码" prop="name" left-icon="lock-fill" :leftIconStyle="{color: '#888', fontSize: '32rpx'}"  label-width="140" >
+			<u-form-item :label-position="labelPosition" label="密码" prop="password" left-icon="lock-fill" :leftIconStyle="{color: '#888', fontSize: '32rpx'}"  label-width="140" >
 				<u-input :border="border" placeholder="请输入密码" v-model="password" type="password"></u-input>
 			</u-form-item>
 		</u-form>
@@ -21,7 +21,7 @@
 	export default {
 		data() {
 			return {
-				name:'',
+				user:'',
 				password:'',
 				border: false,
 				labelPosition: 'left',
@@ -38,9 +38,20 @@
 			// }),
 			// // #endif
 			denglu(){
+				console.log(this.$u.test.mobile(this.user));//验证是否是手机号
 				console.log('dl');
-				console.log(this.name);
+				console.log(this.user);
 				console.log(this.password);
+				// this.$request({
+				// 	data:{
+				// 		type:'登录',
+				// 		user:this.user,
+				// 		password:this.password
+				// 	}
+				// }).then(res => {
+				// 	if(res.code != 0) this.$u.toast(res.data.msg_info)
+				// 	console.log(res);
+				// })
 			}
 			
 		}

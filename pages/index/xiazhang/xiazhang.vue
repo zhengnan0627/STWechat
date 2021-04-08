@@ -1,37 +1,52 @@
 <template>
 	<view class="container">
+		<view class="diaohuo-line-box">
+			<view class="">
+				下账商品列表
+			</view>
+			<view class="">
+				<text style="margin-right: 10rpx;font-size: 40rpx;">{{4}}</text>
+				<u-icon name="arrow-right" size="28" @click="liebiao"></u-icon>
+			</view>
+		</view>
 		<view class="wrap">	
-		
-		
-		
 		<u-form :model="model" :rules="rules" ref="uForm" :errorType="errorType">
-			<u-form-item :label-position="labelPosition" label="医院" prop="qyType" label-width="200">
-				<u-input :border="border" type="select" :select-open="selectShow" v-model="model.qyType" placeholder="请选择医院" @click="selectShow = true"></u-input>
+			<u-form-item :label-position="labelPosition" label="医院" prop="yiyuan" label-width="200">
+				<u-input :border="border" type="select" :select-open="selectShow" v-model="model.yiyuan" placeholder="请选择医院" @click="selectShow = true"></u-input>
 			</u-form-item>
-			<u-select mode="single-column" :list="selectList" v-model="selectShow" title="请选择医院" @confirm="selectConfirm1"></u-select>
-			<u-form-item :label-position="labelPosition" label="医生" prop="region" label-width="200">
-				<u-input :border="border" type="select" :select-open="pickerShow" v-model="model.qyType" placeholder="请选择医生" @click="pickerShow = true"></u-input>
+			<u-select mode="single-column" :list="yiyuanList" v-model="selectShow" title="请选择医院" @confirm="selectConfirm1"></u-select>
+			<u-form-item :label-position="labelPosition" label="医生" prop="yisheng" label-width="200">
+				<u-input :border="border" type="select" :select-open="pickerShow" v-model="model.yisheng" placeholder="请选择医生" @click="pickerShow = true"></u-input>
 			</u-form-item>
-			<u-select mode="single-column" :list="selectList" v-model="pickerShow" title="请选择医生" @confirm="regionConfirm"></u-select>
+			<u-select mode="single-column" :list="yishengList" v-model="pickerShow" title="请选择医生" @confirm="regionConfirm"></u-select>
 			<!-- <u-picker mode="region" v-model="pickerShow" @confirm="regionConfirm"></u-picker> -->
-			<u-form-item :label-position="labelPosition" label="企业名称" prop="name" :required="true" :leftIconStyle="{color: '#888', fontSize: '32rpx'}"  label-width="200" >
-				<u-input :border="border" placeholder="请输入企业名称" v-model="model.name" type="text"></u-input>
+			<u-form-item :label-position="labelPosition" label="科室" prop="keshi" :leftIconStyle="{color: '#888', fontSize: '32rpx'}"  label-width="200" >
+				<u-input :border="border" placeholder="科室" v-model="model.keshi" type="text"></u-input>
 			</u-form-item>
-			<u-form-item :label-position="labelPosition" label="客户类型" prop="goodsType" label-width="200">
-				<u-input :border="border" type="select" :select-open="selectShow2" v-model="model.goodsType" placeholder="请选择客户类型" @click="selectShow2 = true"></u-input>
+			<u-form-item :label-position="labelPosition" label="患者姓名" prop="name"  :leftIconStyle="{color: '#888', fontSize: '32rpx'}"  label-width="200" >
+				<u-input :border="border" placeholder="患者姓名" v-model="model.name" type="text"></u-input>
 			</u-form-item>
-			<u-select mode="single-column" :list="selectList2" v-model="selectShow2" title="请选择客户类型" @confirm="selectConfirm"></u-select>	
-			<u-form-item :label-position="labelPosition" label="营业执照号" prop="yingyebianhao" label-width="200" placeholder="请输入营业执照号">
-				<u-input :border="border" type="number" v-model="model.yingyebianhao" placeholder="请输入营业执照号"></u-input>
+			<u-form-item :label-position="labelPosition" label="性别" prop="sex" label-width="200">
+				<u-input :border="border" type="select" :select-open="selectShow2" v-model="model.sex" placeholder="请选择性别" @click="selectShow2 = true"></u-input>
 			</u-form-item>
-			<u-form-item :label-position="labelPosition" label="身份证号" prop="shenfenzheng" label-width="200" placeholder="请输入身份证号">
-				<u-input :border="border" type="number" v-model="model.shenfenzheng" placeholder="请输入身份证号"></u-input>
+			<u-select mode="single-column" :list="selectList2" v-model="selectShow2" title="请选择性别" @confirm="selectConfirm"></u-select>	
+			<u-form-item :label-position="labelPosition" label="住院号" prop="zhuyuanhao" label-width="200" placeholder="请输入营业执照号">
+				<u-input :border="border" type="text" v-model="model.zhuyuanhao" placeholder="请输入住院号"></u-input>
 			</u-form-item>
-			<u-form-item label-width="200" :label-position="labelPosition" label="联系人" prop="person" :required="true">
-				<u-input :border="border" placeholder="请输入联系人联系人姓名" v-model="model.person" type="text"></u-input>
+			<u-form-item :label-position="labelPosition" label="床号" prop="chuanghao" label-width="200" placeholder="请输入身份证号">
+				<u-input :border="border" type="text" v-model="model.chuanghao" placeholder="请输入床号"></u-input>
 			</u-form-item>
-			<u-form-item :label-position="labelPosition" label="联系人电话" prop="phone" label-width="200" :required="true">
-				<u-input :border="border" placeholder="请输入联系人电话" v-model="model.phone" type="number"></u-input>
+			<u-form-item label-width="200" :label-position="labelPosition" label="诊断结果" prop="zhendaunjieguo">
+				<u-input :border="border" placeholder="请输入诊断结果" v-model="model.zhendaunjieguo" type="text"></u-input>
+			</u-form-item>
+			<u-form-item :label-position="labelPosition" label="手术名称" prop="shoushuName" label-width="200" placeholder="请输入身份证号">
+				<u-input :border="border" type="text" v-model="model.shoushuName" placeholder="请输入手术名称"></u-input>
+			</u-form-item>
+			<u-form-item :label-position="labelPosition" label="手术时间" prop="shoushuTime" label-width="200" placeholder="请输入身份证号">
+				<u-input :border="border" type="text" v-model="model.shoushuTime" placeholder="请输入手术时间"></u-input>
+			</u-form-item>
+			<u-form-item :label-position="labelPosition" label="记账金额" prop="money" label-width="200" placeholder="请输入身份证号">
+				<u-input :border="border" type="number" v-model="model.money" placeholder="请输入记账金额"></u-input>
 			</u-form-item>
 			<!-- <view class="" style="width: 100vw; height: 30px; line-height: 30px;padding-left: 10px;  background-color: #EEEEEE; font-size: 16px;">
 				常规证照
@@ -145,64 +160,51 @@ export default {
 			fileList:[],//(数组，元素为对象),显示预置的图片。其中元素的url属性为图片路径
 			action: 'https://www.tsdjyy.com/wxpay/upload.php?from=APP&type=kaihu',//图片上传配置地址
 			model: {
-				qyType:'',//企业类型
-				name: '',//企业名称
-				region: '',//所在地区
-				goodsType: '',//客户类型
-				yingyebianhao:'',//营业执照号
-				shenfenzheng:'',//身份证号
-				person:'',//联系人
-				phone: '',//联系人电话
-				payType: '',//单选按钮
-				intro: '',//备注信息
-				photo: '',//上传图片
+				yiyuan:'',//医院
+				yisheng: '',//医生
+				keshi: '',//科室
+				name: '',//患者姓名
+				sex:'',//性别
+				zhuyuanhao:'',//住院号
+				chuanghao:'',//床号
+				zhendaunjieguo: '',//诊断结果
+				shoushuName: '',//手术名称
+				shoushuTime: '',//手术时间
+				money: '',//记账金额
 				// sex: '',
 				// likeFruit: '',
 			},
-			//-----------------------选择企业类型数据项----------------
-			selectList: [
+			//-----------------------选择医院数据项----------------
+			yiyuanList: [
 				{
-					value: '诊所',
-					label: '诊所'
+					value: '第一医院',
+					label: '第一医院'
 				},
 				{
-					value: '药店',
-					label: '药店'
-				},
-				{
-					value: '药业公司',
-					label: '药业公司'
-				},
-				{
-					value: '卫生室',
-					label: '卫生室'
-				},
-				{
-					value: '其他',
-					label: '其他'
+					value: '第二医院',
+					label: '第二医院'
 				}
 			],
-			//-----------------------选择客户类型数据项----------------
+			//-----------------------选择医院数据项----------------
+			yishengList: [
+				{
+					value: '张医生',
+					label: '张医生'
+				},
+				{
+					value: '王医生',
+					label: '王医生'
+				}
+			],
+			//-----------------------选择性别数据项----------------
 			selectList2: [
 				{
-					value: '诊所',
-					label: '诊所'
+					value: '男',
+					label: '男'
 				},
 				{
-					value: '药店',
-					label: '药店'
-				},
-				{
-					value: '药业公司',
-					label: '药业公司'
-				},
-				{
-					value: '卫生室',
-					label: '卫生室'
-				},
-				{
-					value: '其他',
-					label: '其他'
+					value: '女',
+					label: '女'
 				}
 			],
 			//-----------------------表单验证数据项----------------
@@ -218,8 +220,8 @@ export default {
 				//企业名称
 				name: [
 					{
-						required: true,
-						message: '请输入企业名称',
+						required: false,
+						message: '请输入患者姓名',
 						trigger: 'blur' ,
 					},
 					// {
@@ -384,10 +386,9 @@ export default {
 		this.$refs.uForm.setRules(this.rules);
 	},
 	methods: {
-		//返回上级页面方法
-		back(){
-			uni.navigateBack({
-				
+		liebiao(){
+			uni.navigateTo({
+				url:'xiazhanglist/xiazhanglist'
 			})
 		},
 		//进入申请进度页面
@@ -482,23 +483,26 @@ export default {
 		radioGroupChange(e) {
 			this.model.payType = e;
 		},
-		// 选择地区回调
+		// 选择医生回调
 		regionConfirm(e) {
-			this.model.region = e.province.label + '-' + e.city.label + '-' + e.area.label;
-			console.log(e);
-		},
-		// 选择商品类型回调
-		selectConfirm1(e) {
-			this.model.qyType = '';
+			this.model.yisheng = '';
 			e.map((val, index) => {
-				this.model.qyType += this.model.qyType == '' ? val.label : '-' + val.label;
+				this.model.yisheng += this.model.yisheng == '' ? val.label : '-' + val.label;
 			})
-			console.log(this.model.qyType);
 		},
-		selectConfirm(e) {
-			this.model.goodsType = '';
+		// 选择医院回调
+		selectConfirm1(e) {
+			this.model.yiyuan = '';
 			e.map((val, index) => {
-				this.model.goodsType += this.model.goodsType == '' ? val.label : '-' + val.label;
+				this.model.yiyuan += this.model.yiyuan == '' ? val.label : '-' + val.label;
+			})
+			console.log(this.model.yiyuan);
+		},
+		// 选择性别回调
+		selectConfirm(e) {
+			this.model.sex = '';
+			e.map((val, index) => {
+				this.model.sex += this.model.sex == '' ? val.label : '-' + val.label;
 			})
 		},
 	}
@@ -515,6 +519,20 @@ export default {
 		text-overflow:ellipsis;
 		white-space:wrap;
 		overflow: hidden;
+	}
+	.diaohuo-line-box{
+		box-sizing: border-box;
+		padding: 0 30rpx;
+		margin-top: 10rpx;
+		width: 100vw;
+		height: 110rpx;
+		line-height: 110rpx;
+		background-color: #FFFFFF;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		// font-size: 32rpx;
+		border-bottom: 8rpx solid #EEEEEE;
 	}
 	.jindu {
 		padding: 4px 8px;

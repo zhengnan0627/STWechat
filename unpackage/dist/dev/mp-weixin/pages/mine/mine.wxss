@@ -86,7 +86,7 @@ page{
 .commit{
 	width: 50vw;
 	margin: 0 auto;
-	margin-top: 80rpx;
+	margin-top: 20rpx;
 	height: 80rpx;
 	line-height: 80rpx;
 	text-align: center;

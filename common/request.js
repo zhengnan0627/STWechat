@@ -4,17 +4,17 @@
 
 //请求封装
  function Request(options){
-	const baseUrl = uni.getStorageSync('baseUrl') ? uni.getStorageSync('baseUrl') : '152.136.28.147:9007';
-	const api = `http://${baseUrl}/VXMail/PublicUrl.ashx` 
+	const baseUrl = '1.85.30.230:8081';
+	const api = 'http://1.85.30.230:8081' 
 	const promise = new Promise(function(resolve,reject){
 		uni.showLoading({
 			title:'加载中',
-			mask:false
+			mask:true
 		})
 		uni.request({
 			url:api,//+options.url
 			method:options.method ||"GET",
-			data:options.data || {},
+			data:{proc:'pro_Get_dataInfo',...options.data},
 			dataType:options.dataType || "json",
 			header:options.header || {},
 			success:function(res){
