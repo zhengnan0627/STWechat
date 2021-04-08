@@ -22,10 +22,13 @@
 		</view>
 		<view class="u-m-t-20">
 			<u-cell-group>
-				<u-cell-item icon="phone-fill" title="通讯录" @click="tongxu"></u-cell-item>
-				<u-cell-item icon="bell-fill" title="新闻列表" @click="xinwen"></u-cell-item>
-				<u-cell-item icon="server-fill" title="联系客服" @click="kefu"></u-cell-item>
-				<u-cell-item icon="info-circle" title="关于我们" @click="guanyu"></u-cell-item>
+				<u-cell-item icon="map-fill" title="切换门店" :center="true" :value="mendianInfo" @click="qiehuan"></u-cell-item>
+			</u-cell-group>
+		</view>
+		<view class="u-m-t-20">
+			<u-cell-group>
+				<u-cell-item :icon="item.icon" :title="item.title" @click="cellClick(item)" v-for="(item,index) in cellList" :key="index"></u-cell-item>
+				
 			</u-cell-group>
 		</view>
 		<view class="commit" @click="tuichu">
@@ -81,17 +84,38 @@
 		data() {
 			return {
 				userName:'名称',
-				userDept:'部门'
+				userDept:'部门',
+				mendianInfo:'顺天测试门店地址医院信息顺天测试门店地址医院信息',
+				cellList:[
+					{icon:'phone-fill',title:'通讯目录',url:'tongxunlu/tongxunlu'},
+					{icon:'bell-fill',title:'新闻列表',url:'../index/notice/notice'},
+					{icon:'server-fill',title:'联系客服',url:'kefu/kefu'},
+					{icon:'lock-fill',title:'修改密码',url:'mima/mima'},
+					{icon:'info-circle',title:'关于我们',url:'guanyu/guanyu'},
+					
+				]
+				
 			}
 		},
 		methods: {
 			tuichu(){
 				console.log('退出');
 				uni.navigateTo({
-					url:'denglu/denglu'
+					url:'login/login'
+				})
+			},
+			qiehuan(){
+				uni.navigateTo({
+					url:'qiehuan/qiehuan'
+				})
+			},
+			cellClick(item){
+				uni.navigateTo({
+					url:item.url
 				})
 			},
 			tongxu(){
+				this.$logo()
 				uni.navigateTo({
 					url:'tongxunlu/tongxunlu'
 				})
@@ -106,6 +130,12 @@
 			kefu(){
 				uni.navigateTo({
 					url:'kefu/kefu'
+				})
+				console.log('kefu');
+			},
+			mima(){
+				uni.navigateTo({
+					url:'mima/mima'
 				})
 				console.log('kefu');
 			},
@@ -196,7 +226,7 @@
 	.commit{
 		width: 50vw;
 		margin: 0 auto;
-		margin-top: 80rpx;
+		margin-top: 20rpx;
 		height: 80rpx;
 		line-height: 80rpx;
 		text-align: center;

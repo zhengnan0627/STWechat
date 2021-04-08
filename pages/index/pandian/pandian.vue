@@ -32,9 +32,17 @@
 					
 					<view class="listbox-flex-input"style="margin-left: 10rpx;">
 						<!-- <u-input v-model="item.xianzhi" type="number" :border="true" :clearable="false" :key="item.bianhao"/> -->
-						<input type="number" v-model="item.xianzhi" @blur="inputBlur($event,item,index)"/>
+						<input type="number" :value="item.xianzhi" @input="input($event,item,index)" @blur="inputBlur($event,item,index)"/>
 					</view>
 				</view>
+			</view>
+		</view>
+		<view class="zhanwei"style="width: 100vw;height: 160rpx;" v-if="!pageCurrent">
+			
+		</view>
+		<view class="commit-box">
+			<view class="commit" @click="commit">
+				提交盘点
 			</view>
 		</view>
 	</view>
@@ -76,6 +84,7 @@
 				// this.key = e.value
 				// this.orderList = []
 				// this.request()
+				
 			},
 			cancle(e){	//点击搜索二字
 				console.log(e.value);
@@ -83,12 +92,22 @@
 				// this.key = e.value
 				// this.orderList = []
 				// this.request()
+				uni.navigateTo({
+					url:'pandianlist'
+				})
+			},
+			input(event,item,index){
+				console.log(event);
+				item.sy_num = event.target.value
 			},
 			inputBlur(event,item,index){
 				console.log(event);
 				console.log(item);
 				console.log(index);
 				this.pandianList[index].is_status = 1
+			},
+			commit(){
+				
 			}
 			
 		}
@@ -149,5 +168,25 @@
 		align-items: center;
 		text-align: center;
 		border-radius: 6rpx;
+	}
+	.commit-box{
+		position: fixed;
+		bottom: 40rpx;
+		width: 100vw;
+		height: 80rpx;
+		line-height: 80rpx;
+		text-align: center;
+		z-index: 999;
+	}
+	.commit{
+		margin: 0rpx auto;
+		width: 30vw;
+		height: 80rpx;
+		line-height: 80rpx;
+		text-align: center;
+		background-color: #1296DB;
+		color: #FFFFFF;
+		border-radius: 10px;
+		z-index: 999;
 	}
 </style>

@@ -271,11 +271,14 @@ export default {
 }
 
 .u-cell__value {
+	margin-left: 20rpx;
 	overflow: hidden;
 	text-align: right;
 	vertical-align: middle;
 	color: $u-tips-color;
 	font-size: 26rpx;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 
 .u-cell__title,

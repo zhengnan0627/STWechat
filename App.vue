@@ -2,6 +2,7 @@
 	export default {
 		onLaunch: function() {
 			console.log('App Launch')
+			uni.setStorageSync('type', 'taocan');
 		},
 		onShow: function() {
 			console.log('App Show')

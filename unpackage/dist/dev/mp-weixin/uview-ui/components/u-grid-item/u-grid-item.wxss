@@ -56,7 +56,7 @@
   position: absolute;
 }
 .u-grid-item-box.data-v-54899586 {
-  padding: 30rpx 0;
+  padding: 20rpx 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
