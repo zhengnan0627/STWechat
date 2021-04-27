@@ -1,31 +1,16 @@
 <template>
 	<view>
-		<!-- <view class="swiper">
-			<swiper autoplay="true" indicator-dots indicator-color="#ffffff" indicator-active-color="#ff0000" circular="true"
-			 interval="2000" duration="1000" class="swiper_warp" style="height: 100%;">
-				<block v-for="(item,i) in swiperlist" :key="i">
-					<swiper-item>
-						<view class="swiper-item">
-							<image :src="item.image" mode="aspectFit"></image>
-						</view>
-					</swiper-item>
-				</block>
-			</swiper>
-		</view> -->
-		<u-swiper :list="swiperlist" :title="true"></u-swiper>
-		<u-notice-bar :list="list" @click="noticetext" @close="listclick"></u-notice-bar>
+		<u-swiper :list="swiperlist" indicator-pos="bottomCenter" name="urls" @click="swiperClick"></u-swiper>
+		<u-notice-bar :list="noticeList" @click="noticetext" @close="listclick"></u-notice-bar>
 		<view class="module-title">
 			功能模块
 		</view>
 		<u-grid :col="3">
 			<u-grid-item v-for="(item,index) in list" :key="index" @click="griditemclick" :index="item">
-				<!-- <u-icon name="photo" :size="46"></u-icon> -->
-				<image src="../../static/logo.png" mode="scaleToFill" class="grid-image"></image>
+				<image :src="item.image" mode="scaleToFill" class="grid-image"></image>
 				<view class="grid-text">{{item.name}}</view>
 			</u-grid-item>
-		</u-grid>
-		
-		
+		</u-grid>	
 	</view>
 </template>
 
@@ -33,52 +18,127 @@
 	export default {
 		data() {
 			return {
-				nickName: null,
-				avatarUrl: null,
-				isCanUse: uni.getStorageSync('isCanUse') || true, //默认为true
-				swiperlist: [
-					{
-						image: '/static/logo.png',
-						'title':'平明送客楚山孤'
-					},
-					{
-						image: '/static/logo.png',
-						'title':'寒雨连江夜入'
-					},
-					{
-						image: '/static/logo.png',
-						'title':'洛阳亲友如相问'
-					},
-				],
+				swiperlist: [],//轮播图数据
+				noticeList: [],
 				list: [
 					{
-						text: '寒雨连江夜入吴寒雨连江夜入吴寒雨连江夜入吴寒雨连江夜入吴',
 						id: 0,
-						name:'下账单',
-						url:'xiazhang/xiazhang'
+						name:'调货查询',
+						url:'diaohuochaxun/shenqingchaxun/shenqingchaxun',
+						image:'../../static/diaohuochaxun.png'
 					},
 					{
-						text: '平明送客楚山孤',
 						id: 1,
-						name:'盘点',
-						url:'pandian/pandian'
+						name:'下账单',
+						url:'xiazhang/xiazhang',
+						image:'../../static/xiazhangdan.png'
 					},
 					{
-						text: '洛阳亲友如相问',
 						id: 2,
+						name:'下账单查询',
+						url:'xiazhangchaxun/xiazhangchaxun',
+						image:'../../static/xiazhangdanchaxun.png'
+						
+					},
+					{
+						id: 3,
 						name:'库存查询',
-						url:'kucun/kucun'
+						url:'kucun/kucun',
+						image:'../../static/kucunchaxun.png'
+					},
+					{
+						id: 4,
+						name:'盘点',
+						url:'pandian/pandian',
+						image:'../../static/pandian.png'	
+					},
+					{
+						id: 5,
+						name:'盘点查询',
+						url:'pandian/pandianlist',
+						image:'../../static/pandainchaxun.png'
+					},
+					{
+						id: 6,
+						name:'返库查询',
+						url:'fankuchaxun/fankuchaxun',
+						image:'../../static/fanku.png'
 					}
 				],
 				
 			};
 		},
 		onLoad() {
-
+			this.$request({
+				data:{
+					type:'网络测试'
+				}
+			}).then(res => {
+				if(res.code != 0) return this.$u.toast(res.data[0].msg_info)
+				const resdata = res.data
+				console.log(res);
+			})
+			this.$request({
+				data:{
+					type:'轮播',
+					userid:uni.getStorageSync('userid')
+				}
+			}).then(res => {
+				if(res.code != 0) return this.$u.toast(res.data[0].msg_info)
+				const resdata = res.data
+				console.log(res);
+				this.swiperlist = resdata
+			})
+			this.$request({
+				data:{
+					type:'新闻',
+					userid:uni.getStorageSync('userid')
+				}
+			}).then(res => {
+				if(res.code != 0) return this.$u.toast(res.data[0].msg_info)
+				const resdata = res.data
+				console.log(res);
+				this.noticeList = resdata
+			})
+			this.$request({
+				data:{
+					type:'公司名称'
+				}
+			}).then(res => {
+				if(res.code != 0) return this.$u.toast(res.data[0].msg_info)
+				console.log(res);
+				uni.setStorageSync('companyName', res.data[0].company_name);
+				uni.setNavigationBarTitle({
+				    title: res.data[0].company_name
+				});
+			})
+			this.$request({
+				data:{
+					type:'客户列表',
+					userid:uni.getStorageSync('userid')
+				}
+			}).then(addres => {
+				if(addres.code == 0 && addres.data.length > 1 &&  uni.getStorageSync('clientid') == ''){
+					uni.navigateTo({url:'../mine/qiehuan/qiehuan'})
+				}
+			})
 		},
 		methods: {
+			swiperClick(index){
+				// console.log(index);
+				if(this.swiperlist[index].type == '1'){
+					const n_id = JSON.stringify(this.swiperlist[index].n_id)
+					uni.navigateTo({
+						url:'notice/noticesubpages?n_id='+ n_id
+					})
+				}
+			},
 			noticetext(index) {
 				console.log(index);
+				const n_id = JSON.stringify(index.n_id)
+				uni.navigateTo({
+					url:'notice/noticesubpages?n_id='+ n_id
+				})
 			},
 			listclick() {
 				console.log('查看更多被点击');
@@ -91,8 +151,7 @@
 				uni.navigateTo({
 					url:e.url
 				})
-			}
-			
+			} 
 		},
 	}
 </script>
@@ -124,7 +183,7 @@
 	.module-title {
 		height: 80rpx;
 		line-height: 80rpx;
-		font-size: 28rpx;
+		font-size: 32rpx;
 		font-weight: 600;
 		padding-left: 20rpx;
 		background-color: #FFFFFF;
@@ -132,9 +191,9 @@
 		border-top: 5px solid #D5D5D5;
 	}
 	.grid-image{
-		width: 180rpx !important;
-		height: 180rpx !important;
-		padding: 20rpx 10rpx;
+		width: 160rpx !important;
+		height: 160rpx !important;
+		padding: 10rpx 10rpx;
 	} 
 	.grid-text {
 		font-size: 28rpx;

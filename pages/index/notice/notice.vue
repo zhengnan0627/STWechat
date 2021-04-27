@@ -3,7 +3,7 @@
 		<block v-for="(item,i) in noticeList" :key="i"> 	
 				<view class="item-container"  @click="noticsubpages(item)"  :key="i">
 					<view class="item-title">
-						{{item.N_title}} 
+						{{item.n_title}} 
 					</view>
 					<view class="item-content">
 						<view class="">
@@ -24,14 +24,22 @@
 			return {
 				userid:null,//用户id(从缓存中取)
 				noticeList:[
-					{N_title:'企业公告',n_date:'2020',n_author:'管理员'}
+					// {n_title:'企业公告',n_date:'2020',n_author:'管理员'}
 				]
 			}
 		},
 		onLoad() {
-			uni.setStorageSync('userid','123456')
-			console.log(uni.getStorageSync('userid'));
-			
+			this.$request({
+				data:{
+					type:'新闻',
+					userid:uni.getStorageSync('userid')
+				}
+			}).then(res => {
+				if(res.code != 0) return this.$u.toast(res.data[0].msg_info)
+				const resdata = res.data
+				console.log(res);
+				this.noticeList = resdata
+			})
 			// this.userid = uni.getStorageSync('userid')
 			// this.$request({
 			// 	data:{
@@ -53,7 +61,7 @@
 			},
 			noticsubpages(item) {
 				// console.log(item);
-				const n_id = JSON.stringify(item.N_ID)
+				const n_id = JSON.stringify(item.n_id)
 				uni.navigateTo({
 					url:'noticesubpages?n_id='+ n_id
 				})

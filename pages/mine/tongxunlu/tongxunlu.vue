@@ -1,18 +1,18 @@
 <template>
 	<view class="container">
-		<uni-search-bar placeholder="客户名/客户地址/联系人/联系人电话" @confirm="search" @cancel="cancle" style="border-bottom: 1px solid #EEEEEE;"/>
-		<view class="xonglu-box" v-for="item in 10">
+		<view class="xonglu-box" v-for="(item,index) in tongxunList" :key="index">
 			<view class="name">
-				张三
+				{{item.member_names}}
 			</view>
 			<view class="phone" style="display: flex;">
-				12345678910
+				{{item.member_phones}}
 				<view class="icon" style="margin-left: 10rpx;">
-					<uni-icons type="phone-filled" color="#57C87A"></uni-icons>
+					<uni-icons type="phone-filled" color="#57C87A" @click="phone(item)"></uni-icons>
 				</view>
 			</view>
 			
 		</view>
+		<u-empty marginTop="200" v-if="tongxunList.length == 0"></u-empty>
 	</view>
 </template>
 
@@ -20,25 +20,27 @@
 	export default {
 		data() {
 			return {
-				
+				tongxunList:[]
 			}
 		},
+		onLoad() {
+			this.$request({
+				data:{
+					type:'通讯录',
+					userid:uni.getStorageSync('userid')
+				}
+			}).then(res => {
+				if(res.code != 0) return this.$u.toast(res.data[0].msg_info)
+				console.log(res);
+				this.tongxunList = res.data
+			})
+		},
 		methods: {
-			//搜索方法
-			search(e){ //点击键盘确定
-				// console.log(e.value);
-				// this.pageindex = 1
-				// this.key = e.value
-				// this.orderList = []
-				// this.request()
-			},
-			cancle(e){	//点击搜索二字
-				console.log(e.value);
-				// this.pageindex = 1
-				// this.key = e.value
-				// this.orderList = []
-				// this.request()
-			},
+			phone(item){
+				uni.makePhoneCall({
+					phoneNumber:item.member_phones
+				})
+			}
 		}
 	}
 </script>

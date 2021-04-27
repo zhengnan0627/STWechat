@@ -1,5 +1,5 @@
 <template>
-	<view class="u-switch" :class="[value == true ? 'u-switch--on' : '', disabled ? 'u-switch--disabled' : '']" @tap="onClick"
+	<view class="u-switch" :class="[value == 'N' ? 'u-switch--on' : '', disabled ? 'u-switch--disabled' : '']" @tap="onClick"
 	 :style="[switchStyle]">
 		<view class="u-switch__node node-class" :style="{
 			width: $u.addUnit(this.size),
@@ -46,7 +46,7 @@
 			// 打开时的背景颜色
 			activeColor: {
 				type: String,
-				default: '#2979ff'
+				default: '#1296DB'
 			},
 			// 关闭时的背景颜色
 			inactiveColor: {
@@ -55,7 +55,7 @@
 			},
 			// 通过v-model双向绑定的值
 			value: {
-				type: Boolean,
+				type: [Number, String, Boolean],
 				default: false
 			},
 			// 是否使手机发生短促震动，目前只在iOS的微信小程序有效(2020-05-06)
@@ -66,12 +66,12 @@
 			// 打开选择器时的值
 			activeValue: {
 				type: [Number, String, Boolean],
-				default: true
+				default: 'N'
 			},
 			// 关闭选择器时的值
 			inactiveValue: {
 				type: [Number, String, Boolean],
-				default: false
+				default: 'Y'
 			},
 		},
 		data() {
@@ -83,7 +83,7 @@
 			switchStyle() {
 				let style = {};
 				style.fontSize = this.size + 'rpx';
-				style.backgroundColor = this.value ? this.activeColor : this.inactiveColor;
+				style.backgroundColor = this.value == 'N' ? this.activeColor : this.inactiveColor;
 				return style;
 			},
 			loadingColor() {
@@ -95,10 +95,16 @@
 				if (!this.disabled && !this.loading) {
 					// 使手机产生短促震动，微信小程序有效，APP(HX 2.6.8)和H5无效
 					if(this.vibrateShort) uni.vibrateShort();
-					this.$emit('input', !this.value);
+					if(this.value == 'Y'){
+						this.$emit('input', 'N');
+					}else{
+						this.$emit('input', 'Y');
+					}
+					//源代码注释掉改为发送'0'和'1'
+					// this.$emit('input', !this.value);
 					// 放到下一个生命周期，因为双向绑定的value修改父组件状态需要时间，且是异步的
 					this.$nextTick(() => {
-						this.$emit('change', this.value ? this.activeValue : this.inactiveValue);
+						this.$emit('change', this.value == 'N' ? this.activeValue : this.inactiveValue);
 					})
 				}
 			}

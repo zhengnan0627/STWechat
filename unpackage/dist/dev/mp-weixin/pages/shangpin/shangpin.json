@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "商品展示",
+  "navigationBarTitleText": "商品展示-套餐",
   "enablePullDownRefresh": false,
   "disableScroll": true,
   "usingComponents": {
@@ -7,7 +7,6 @@
     "uni-icons": "/components/uni-icons/uni-icons",
     "u-search": "/uview-ui/components/u-search/u-search",
     "u-tabs": "/uview-ui/components/u-tabs/u-tabs",
-    "u-badge": "/uview-ui/components/u-badge/u-badge",
     "u-icon": "/uview-ui/components/u-icon/u-icon",
     "u-empty": "/uview-ui/components/u-empty/u-empty",
     "u-back-top": "/uview-ui/components/u-back-top/u-back-top",

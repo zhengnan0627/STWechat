@@ -225,7 +225,7 @@
 		&__label {
 			word-wrap: break-word;
 			margin-left: 10rpx;
-			margin-right: 24rpx;
+			margin-right: 34rpx;
 			color: $u-content-color;
 			font-size: 30rpx;
 			

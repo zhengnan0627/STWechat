@@ -10,15 +10,6 @@
 			
 			}
 		}
-	    ,{
-            "path" : "pages/index/xiadan",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "下账",
-                "enablePullDownRefresh": false
-            }
-            
-        }
         ,{
             "path" : "pages/index/notice/notice",
             "style" :                                                                                    
@@ -78,7 +69,7 @@
             "path" : "pages/shangpin/shangpin",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "商品展示",
+                "navigationBarTitleText": "商品展示-套餐",
                 "enablePullDownRefresh": false,
 				"disableScroll":true
             }
@@ -129,7 +120,7 @@
             
         }
         ,{
-            "path" : "pages/diaohuo/shenqingchaxun/shenqingchaxun",
+            "path" : "pages/index/diaohuochaxun/shenqingchaxun/shenqingchaxun",
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "调货申请查询",
@@ -138,7 +129,7 @@
             
         }
         ,{
-            "path" : "pages/diaohuo/detail/detail",
+            "path" : "pages/index/diaohuochaxun/detail/detail",
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "调货查询详情",
@@ -155,6 +146,150 @@
             }
             
         }
+        ,{
+            "path" : "pages/index/pandian/pandianlist",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "盘点单列表",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/index/pandian/pandiandetail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "盘点单详情",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/mine/mima/mima",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "修改密码",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/shangpin/danpinlist/danpinlist",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "商品展示-单品列表",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/index/xiazhangchaxun/xiazhangchaxun",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "下账查询",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/mine/qiehuan/qiehuan",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "切换门店",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/index/xiazhangchaxun/xiugaixiazhang/xiugaixiazhang",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "下账单",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/index/xiazhang/xiazhanglist/xiazhanglist",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "下账商品列表",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/index/xiazhang/shoushu/shoushu",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "提取手术调货单",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/index/xiazhang/danpin/danpin",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "选择单个商品",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/mine/guanyu/guanyu",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "关于我们",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/index/xiazhangchaxun/xiugailist/xiugailist",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "下账商品列表",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/shangpin/taocanlist/taocanlist",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "商品展示-套餐列表",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/index/diaohuochaxun/search/search",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "商品搜索",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/index/fankuchaxun/fankuchaxun",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "返库查询",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/index/fankuchaxun/fankudetail/fankudetail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "返库详情",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
@@ -165,30 +300,30 @@
 	},
 	"tabBar": {
 	    "color": "#7A7E83",
-	    "selectedColor": "#3cc51f",
+	    "selectedColor": "#1296DB",
 	    "borderStyle": "black",
 	    "backgroundColor": "#ffffff",
 	    "list": [
 			{
 			    "pagePath": "pages/index/index",
-			    "iconPath": "static/logo.png",
-			    "selectedIconPath": "static/logo.png",
+			    "iconPath": "static/shouye.png",
+			    "selectedIconPath": "static/shouye-active.png",
 			    "text": "主页"
 			},{
 	        "pagePath": "pages/shangpin/shangpin",
-	        "iconPath": "static/logo.png",
-	        "selectedIconPath": "static/logo.png",
+	        "iconPath": "static/shangpin.png",
+	        "selectedIconPath": "static/shangpin-active.png",
 	        "text": "商品展示"
 	    },
 		{
 			    "pagePath": "pages/diaohuo/diaohuo",
-			    "iconPath": "static/logo.png",
-			    "selectedIconPath": "static/logo.png",
+			    "iconPath": "static/tiaohuo.png",
+			    "selectedIconPath": "static/tiaohuo-active.png",
 			    "text": "调货申请"
 			},{
 		    "pagePath": "pages/mine/mine",
-		    "iconPath": "static/logo.png",
-		    "selectedIconPath": "static/logo.png",
+		    "iconPath": "static/mine.png",
+		    "selectedIconPath": "static/mine-active.png",
 		    "text": "我的"
 		}]
 	}

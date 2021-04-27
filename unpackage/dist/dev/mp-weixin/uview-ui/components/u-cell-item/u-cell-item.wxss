@@ -83,11 +83,14 @@
   word-wrap: break-word;
 }
 .u-cell__value.data-v-65423b64 {
+  margin-left: 20rpx;
   overflow: hidden;
   text-align: right;
   vertical-align: middle;
   color: #909399;
   font-size: 26rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .u-cell__title.data-v-65423b64,
 .u-cell__value.data-v-65423b64 {

@@ -6,6 +6,9 @@
     "u-form": "/uview-ui/components/u-form/u-form",
     "u-form-item": "/uview-ui/components/u-form-item/u-form-item",
     "u-input": "/uview-ui/components/u-input/u-input",
-    "u-select": "/uview-ui/components/u-select/u-select"
+    "u-select": "/uview-ui/components/u-select/u-select",
+    "u-empty": "/uview-ui/components/u-empty/u-empty",
+    "u-back-top": "/uview-ui/components/u-back-top/u-back-top",
+    "u-loadmore": "/uview-ui/components/u-loadmore/u-loadmore"
   }
 }

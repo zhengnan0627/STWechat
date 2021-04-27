@@ -19,7 +19,7 @@
 					:style="[textStyle]"
 					:class="['u-type-' + type]"
 				>
-					{{ item.text }}
+					{{ item.n_title }}
 				</view>
 			</swiper-item>
 		</swiper>

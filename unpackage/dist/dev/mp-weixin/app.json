@@ -1,7 +1,6 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/index/xiadan",
     "pages/index/notice/notice",
     "pages/index/notice/noticesubpages",
     "pages/index/xiazhang/xiazhang",
@@ -14,9 +13,25 @@
     "pages/index/pandian/pandian",
     "pages/index/kucun/kucun",
     "pages/mine/denglu/denglu",
-    "pages/diaohuo/shenqingchaxun/shenqingchaxun",
-    "pages/diaohuo/detail/detail",
-    "pages/mine/login/login"
+    "pages/index/diaohuochaxun/shenqingchaxun/shenqingchaxun",
+    "pages/index/diaohuochaxun/detail/detail",
+    "pages/mine/login/login",
+    "pages/index/pandian/pandianlist",
+    "pages/index/pandian/pandiandetail",
+    "pages/mine/mima/mima",
+    "pages/shangpin/danpinlist/danpinlist",
+    "pages/index/xiazhangchaxun/xiazhangchaxun",
+    "pages/mine/qiehuan/qiehuan",
+    "pages/index/xiazhangchaxun/xiugaixiazhang/xiugaixiazhang",
+    "pages/index/xiazhang/xiazhanglist/xiazhanglist",
+    "pages/index/xiazhang/shoushu/shoushu",
+    "pages/index/xiazhang/danpin/danpin",
+    "pages/mine/guanyu/guanyu",
+    "pages/index/xiazhangchaxun/xiugailist/xiugailist",
+    "pages/shangpin/taocanlist/taocanlist",
+    "pages/index/diaohuochaxun/search/search",
+    "pages/index/fankuchaxun/fankuchaxun",
+    "pages/index/fankuchaxun/fankudetail/fankudetail"
   ],
   "subPackages": [],
   "window": {
@@ -28,36 +43,36 @@
   },
   "tabBar": {
     "color": "#7A7E83",
-    "selectedColor": "#3cc51f",
+    "selectedColor": "#1296DB",
     "borderStyle": "black",
     "backgroundColor": "#ffffff",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "iconPath": "static/logo.png",
-        "selectedIconPath": "static/logo.png",
+        "iconPath": "static/shouye.png",
+        "selectedIconPath": "static/shouye-active.png",
         "text": "主页"
       },
       {
         "pagePath": "pages/shangpin/shangpin",
-        "iconPath": "static/logo.png",
-        "selectedIconPath": "static/logo.png",
+        "iconPath": "static/shangpin.png",
+        "selectedIconPath": "static/shangpin-active.png",
         "text": "商品展示"
       },
       {
         "pagePath": "pages/diaohuo/diaohuo",
-        "iconPath": "static/logo.png",
-        "selectedIconPath": "static/logo.png",
+        "iconPath": "static/tiaohuo.png",
+        "selectedIconPath": "static/tiaohuo-active.png",
         "text": "调货申请"
       },
       {
         "pagePath": "pages/mine/mine",
-        "iconPath": "static/logo.png",
-        "selectedIconPath": "static/logo.png",
+        "iconPath": "static/mine.png",
+        "selectedIconPath": "static/mine-active.png",
         "text": "我的"
       }
     ]
   },
   "usingComponents": {},
-  "sitemapLocation": "sitemap76.json"
+  "sitemapLocation": "sitemap77.json"
 }

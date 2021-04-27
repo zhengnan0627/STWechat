@@ -2,9 +2,15 @@
 	export default {
 		onLaunch: function() {
 			console.log('App Launch')
+			// uni.setStorageSync('userid','z') 
+			if(uni.getStorageSync('userid') == ''){
+				uni.reLaunch({
+					url:'pages/mine/login/login'
+				})
+			}
 		},
 		onShow: function() {
-			console.log('App Show')
+			// console.log('App Show')
 			const updateManager = uni.getUpdateManager();
 			
 			updateManager.onCheckForUpdate(function (res) {
@@ -31,7 +37,8 @@
 			});
 		},
 		onHide: function() {
-			console.log('App Hide')
+			// console.log('App Hide')
+			// uni.setStorageSync('type', '套餐分类');
 		}
 	}
 </script>

@@ -4,7 +4,7 @@
 		<view v-if="isCanUse">
 			<view>
 				<view class='header'>
-					<image src='/static/logo.png'></image>
+					<image src='/static/logo1.png'></image>
 				</view>
 				<view class='content'>
 					<view>申请获取以下权限</view>

@@ -31,7 +31,7 @@
 .module-title {
 	height: 80rpx;
 	line-height: 80rpx;
-	font-size: 28rpx;
+	font-size: 32rpx;
 	font-weight: 600;
 	padding-left: 20rpx;
 	background-color: #FFFFFF;
@@ -39,9 +39,9 @@
 	border-top: 5px solid #D5D5D5;
 }
 .grid-image{
-	width: 180rpx !important;
-	height: 180rpx !important;
-	padding: 20rpx 10rpx;
+	width: 160rpx !important;
+	height: 160rpx !important;
+	padding: 10rpx 10rpx;
 }
 .grid-text {
 	font-size: 28rpx;

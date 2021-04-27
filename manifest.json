@@ -43,14 +43,16 @@
             /* ios打包配置 */
             "ios" : {},
             /* SDK配置 */
-            "sdkConfigs" : {}
+            "sdkConfigs" : {
+                "ad" : {}
+            }
         }
     },
     /* 快应用特有相关 */
     "quickapp" : {},
     /* 小程序特有相关 */
     "mp-weixin" : {
-        "appid" : "wxacbb02ba79372560",
+        "appid" : "wx1098b9a1f041e02f",
         "setting" : {
             "urlCheck" : false
         },
